@@ -8,4 +8,9 @@ public class UserRegistration {
 		  return Pattern.matches(regex, name);
 		  
 	}
+	public boolean validateLastName(String name) {
+		  String regex="^[A-Z][A-Z a-z]{2,}$";
+		  return Pattern.matches(regex, name);
+		  
+	}
 }

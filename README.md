@@ -1,28 +1,28 @@
-# User Registration System - UC1
+# User Registration System - UC2
 
 ## Problem Statement
 
-As a user, I need to enter a valid first name.
+As a user, I need to enter a valid last name.
 
 ## Requirement
 
-* First name should start with a capital letter.
-* First name should contain a minimum of 3 characters.
+* Last name should start with a capital letter.
+* Last name should contain a minimum of 3 characters.
 * Only alphabetic characters are allowed.
 
 ## Example
 
 ### Valid Inputs
 
-* Ram
-* John
-* Naveen
+* Kumar
+* Sharma
+* Reddy
 
 ### Invalid Inputs
 
-* ram
-* Ra
-* R1m
+* kumar
+* Ku
+* K1mar
 
 ## Technologies Used
 
@@ -36,7 +36,7 @@ As a user, I need to enter a valid first name.
 ```text
 UserRegistrationSystem/
 └── src/
-    └── com.bridgelabz.userregistration/
+    └── com.userregistration/
         ├── UserRegistration.java
         └── UserRegistrationMain.java
 ```
@@ -52,8 +52,8 @@ UserRegistrationSystem/
 1. Clone the repository.
 2. Open the project in Eclipse.
 3. Run `UserRegistrationMain.java`.
-4. Enter the first name.
-5. The program displays whether the first name is valid or invalid.
+4. Enter the last name.
+5. The program displays whether the last name is valid or invalid.
 
 ## Author
 

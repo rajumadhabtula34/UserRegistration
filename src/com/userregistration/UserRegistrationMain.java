@@ -16,6 +16,16 @@ public class UserRegistrationMain {
             		     System.out.println("name is invalid..");
             	   }
             	   
+            	   System.out.println("Enter the last name: ");
+            	   String lastname=sc.nextLine();
+            	   
+            	   if(user.validateLastName(lastname)) {
+            		     System.out.println("name is valid..");
+            	   }
+            	   else {
+            		     System.out.println("name is invalid..");
+            	   }
+            	   
              }
 
 }
