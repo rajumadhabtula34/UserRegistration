@@ -17,4 +17,8 @@ public class UserRegistration {
 		   String regex="^[0-9 A-z a-z]+([-_+.][a-z 0-9 A-Z]+)?@[0-9 a-z A-Z]+\\.[a-z A-Z]{2,}(\\.[a-z A-Z]{2})?$";
 		   return Pattern.matches(regex, email);
 	}
+	public boolean validatePhoneNumber(String number) {
+		String regex="^[0-9]{2}\\s[6-9][0-9]{9}$";
+		return Pattern.matches(regex,number);
+	}
 }

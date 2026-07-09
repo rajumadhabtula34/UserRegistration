@@ -1,34 +1,31 @@
-# User Registration System - UC3
+# User Registration System - UC4
 
 ## Problem Statement
-As a user, I need to enter a valid email address.
+As a user, I need to enter a valid mobile number.
 
 ## Requirement
-- Email should follow the standard email format.
-- Email contains:
-  - Username
-  - '@' symbol
-  - Domain name
-  - Domain extension
-- Optional username extension and optional country extension are allowed.
+- Mobile number should follow the format:
+  - Two-digit country code
+  - One space
+  - Ten-digit mobile number
+
+### Example
+91 9919819801
 
 ## Valid Examples
-- abc@bl.co
-- abc.xyz@bl.co
-- abc@bl.co.in
-- abc.xyz@bl.co.in
+- 91 9876543210
+- 91 9919819801
 
 ## Invalid Examples
-- abcbl.co
-- abc@
-- @bl.co
-- abc@bl
-- abc@.co
+- 919876543210
+- 91-9876543210
+- 91 987654321
+- 1 9876543210
 
 ## Regex Used
 
 ```java
-^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)?@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$
+^[0-9]{2}\\s[0-9]{10}$
 ```
 
 ## Technologies Used
@@ -51,8 +48,8 @@ UserRegistrationSystem/
 1. Clone the repository.
 2. Open the project in Eclipse.
 3. Run `UserRegistrationMain.java`.
-4. Enter the first name, last name, and email address.
-5. The application validates the email and displays whether it is valid or invalid.
+4. Enter the mobile number in the required format.
+5. The application displays whether the mobile number is valid or invalid.
 
 ## Author
 Raju
