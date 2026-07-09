@@ -46,7 +46,16 @@ public class UserRegistrationMain {
             	   System.out.println("Enter the password: ");
             	   String password=sc.nextLine();
             	   
-            	   if(user.validatePasswordRule1(number)) {
+            	   if(user.validatePasswordRule1(password)) {
+            		     System.out.println("password is valid..");
+            	   }
+            	   else {
+            		     System.out.println("password is invalid..");
+            	   }
+            	   System.out.println("Enter the password: ");
+            	   String password2=sc.nextLine();
+            	   
+            	   if(user.validatePasswordRule2(password2)) {
             		     System.out.println("password is valid..");
             	   }
             	   else {
