@@ -1,27 +1,28 @@
-# User Registration System - UC6
+# User Registration System - UC7
 
 ## Problem Statement
 As a user, I need to enter a valid password.
 
 ## Requirement
 The password should:
-- Contain a minimum of 8 characters.
+- Contain at least 8 characters.
 - Contain at least one uppercase letter.
+- Contain at least one numeric digit.
 
 ## Valid Examples
-- Password
+- Password1
 - Java1234
-- Welcome1
+- Welcome9
 
 ## Invalid Examples
-- password
-- java1234
-- pass
+- password1
+- Password
+- Pass12
 
 ## Regex Used
 
 ```java
-^(?=.*[A-Z]).{8,}$
+^(?=.*[A-Z])(?=.*\\d).{8,}$
 ```
 
 ## Technologies Used
@@ -45,7 +46,7 @@ UserRegistrationSystem/
 2. Open the project in Eclipse.
 3. Run `UserRegistrationMain.java`.
 4. Enter a password.
-5. The application checks whether the password contains at least 8 characters and one uppercase letter.
+5. The application validates the password based on all three rules.
 
 ## Author
 Raju
