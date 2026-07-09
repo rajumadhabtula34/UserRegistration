@@ -1,50 +1,28 @@
-# User Registration System
+# User Registration System - UC1
 
-## Overview
+## Problem Statement
 
-The User Registration System validates user details using Java Regular Expressions (Regex). It ensures that the user enters valid information according to predefined rules.
+As a user, I need to enter a valid first name.
 
-## Features
-
-### UC1 – First Name Validation
+## Requirement
 
 * First name should start with a capital letter.
-* Minimum length should be 3 characters.
+* First name should contain a minimum of 3 characters.
+* Only alphabetic characters are allowed.
 
-### UC2 – Last Name Validation
+## Example
 
-* Last name should start with a capital letter.
-* Minimum length should be 3 characters.
+### Valid Inputs
 
-### UC3 – Email Validation
+* Ram
+* John
+* Naveen
 
-* Validates email addresses in the required format.
-* Example: `abc.xyz@bl.co.in`
+### Invalid Inputs
 
-### UC4 – Mobile Number Validation
-
-* Accepts country code followed by a space and a 10-digit mobile number.
-* Example: `91 9919819801`
-
-### UC5 – Password Rule 1
-
-* Password must contain a minimum of 8 characters.
-
-### UC6 – Password Rule 2
-
-* Password must contain at least one uppercase letter.
-
-### UC7 – Password Rule 3
-
-* Password must contain at least one numeric digit.
-
-### UC8 – Password Rule 4
-
-* Password must contain exactly one special character.
-
-### UC9 – Email Sample Validation
-
-* Validates multiple valid and invalid email samples using test cases.
+* ram
+* Ra
+* R1m
 
 ## Technologies Used
 
@@ -52,18 +30,21 @@ The User Registration System validates user details using Java Regular Expressio
 * Regular Expressions (Regex)
 * Eclipse IDE
 * Git & GitHub
-* JUnit (for test cases)
 
 ## Project Structure
 
+```text
 UserRegistrationSystem/
-
+└── src/
+    └── com.bridgelabz.userregistration/
+        ├── UserRegistration.java
+        └── UserRegistrationMain.java
 ```
-src/
-└── com.bridgelabz.userregistration/
-    ├── UserRegistration.java
-    ├── UserRegistrationMain.java
-    └── UserRegistrationTest.java
+
+## Regex Used
+
+```java
+^[A-Z][a-zA-Z]{2,}$
 ```
 
 ## How to Run
@@ -71,8 +52,8 @@ src/
 1. Clone the repository.
 2. Open the project in Eclipse.
 3. Run `UserRegistrationMain.java`.
-4. Enter the required user details.
-5. The program displays whether the input is valid or invalid.
+4. Enter the first name.
+5. The program displays whether the first name is valid or invalid.
 
 ## Author
 
