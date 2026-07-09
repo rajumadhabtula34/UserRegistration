@@ -29,3 +29,11 @@ target/
 # Gradle
 build/
 .gradle/
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Compiled files
+bin/
+*.class
