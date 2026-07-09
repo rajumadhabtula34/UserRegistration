@@ -25,6 +25,16 @@ public class UserRegistrationMain {
             	   else {
             		     System.out.println("name is invalid..");
             	   }
+            	   System.out.println("Enter the email: ");
+            	   String email=sc.nextLine();
+            	   
+            	   if(user.validateEmail(email)) {
+            		     System.out.println("email is valid..");
+            	   }
+            	   else {
+            		     System.out.println("email is invalid..");
+            	   }
+            	   
             	   
              }
 
