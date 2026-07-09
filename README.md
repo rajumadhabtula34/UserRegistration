@@ -1,31 +1,25 @@
-# User Registration System - UC4
+# User Registration System - UC5
 
 ## Problem Statement
-As a user, I need to enter a valid mobile number.
+As a user, I need to enter a valid password.
 
 ## Requirement
-- Mobile number should follow the format:
-  - Two-digit country code
-  - One space
-  - Ten-digit mobile number
-
-### Example
-91 9919819801
+- Password should contain a minimum of 8 characters.
 
 ## Valid Examples
-- 91 9876543210
-- 91 9919819801
+- Password
+- Java1234
+- abcdefgh
 
 ## Invalid Examples
-- 919876543210
-- 91-9876543210
-- 91 987654321
-- 1 9876543210
+- Pass
+- Java12
+- abc123
 
 ## Regex Used
 
 ```java
-^[0-9]{2}\\s[0-9]{10}$
+^.{8,}$
 ```
 
 ## Technologies Used
@@ -48,8 +42,8 @@ UserRegistrationSystem/
 1. Clone the repository.
 2. Open the project in Eclipse.
 3. Run `UserRegistrationMain.java`.
-4. Enter the mobile number in the required format.
-5. The application displays whether the mobile number is valid or invalid.
+4. Enter a password.
+5. The application validates whether the password contains at least 8 characters.
 
 ## Author
 Raju

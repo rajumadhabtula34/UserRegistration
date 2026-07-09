@@ -19,6 +19,11 @@ public class UserRegistration {
 	}
 	public boolean validatePhoneNumber(String number) {
 		String regex="^[0-9]{2}\\s[6-9][0-9]{9}$";
+		
 		return Pattern.matches(regex,number);
+	}
+	public boolean validatePasswordRule1(String password) {
+		   String regex="^.{8}$";
+		   return Pattern.matches(regex, password);
 	}
 }

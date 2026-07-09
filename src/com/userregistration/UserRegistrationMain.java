@@ -43,6 +43,15 @@ public class UserRegistrationMain {
             	   else {
             		     System.out.println("number is invalid..");
             	   }
+            	   System.out.println("Enter the password: ");
+            	   String password=sc.nextLine();
+            	   
+            	   if(user.validatePasswordRule1(number)) {
+            		     System.out.println("password is valid..");
+            	   }
+            	   else {
+            		     System.out.println("password is invalid..");
+            	   }
             	   
             	   
              }
