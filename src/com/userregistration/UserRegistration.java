@@ -38,4 +38,8 @@ public class UserRegistration {
 		   String regex="^(?=.*[A-Z])(?=.*\\d).{8,}(?.*[!@#$&*])$";
 		   return Pattern.matches(regex, password);
 	}
-}
+	public boolean validateEmailAll(String email) {
+	    String regex = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2})?$";
+	    return email.matches(regex);
+	}
+	}

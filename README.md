@@ -1,47 +1,58 @@
-# UC8 - Password Validation (Rule 4)
+# Email Validation - Test All Email Samples
 
 ## Objective
-Validate the user password by ensuring it satisfies all the previous password rules and contains exactly one special character.
 
-## Requirements
-The password must:
+Validate all the email samples provided in the test case document using Java Regular Expressions (Regex). The program should correctly identify valid and invalid email addresses.
 
-- Have a minimum of 8 characters.
-- Contain at least one uppercase letter.
-- Contain at least one numeric digit.
-- Contain exactly one special character.
+## Description
 
-## Regex Used
+This program reuses the email validation method developed earlier and tests it against a predefined list of valid and invalid email samples.
 
-```java
-^(?=.*[A-Z])(?=.*[0-9])(?=(?:.*[^A-Za-z0-9]){1})(?!.*[^A-Za-z0-9].*[^A-Za-z0-9]).{8,}$
-```
+## Valid Email Samples
 
-## Examples
+* [abc@yahoo.com](mailto:abc@yahoo.com)
+* [abc-100@yahoo.com](mailto:abc-100@yahoo.com)
+* [abc.100@yahoo.com](mailto:abc.100@yahoo.com)
+* [abc111@abc.com](mailto:abc111@abc.com)
+* [abc-100@abc.net](mailto:abc-100@abc.net)
+* [abc.100@abc.com.au](mailto:abc.100@abc.com.au)
+* [abc@1.com](mailto:abc@1.com)
+* [abc@gmail.com.com](mailto:abc@gmail.com.com)
+* [abc+100@gmail.com](mailto:abc+100@gmail.com)
 
-### Valid Passwords
+## Invalid Email Samples
 
-```
-Password@1
-Abcdef1#
-Java123$
-MyPass1!
-```
+* abc
+* [abc@.com.my](mailto:abc@.com.my)
+* [abc123@gmail.a](mailto:abc123@gmail.a)
+* [abc123@.com](mailto:abc123@.com)
+* [abc123@.com.com](mailto:abc123@.com.com)
+* [.abc@abc.com](mailto:.abc@abc.com)
+* abc()*@gmail.com
+* abc@%*.com
+* [abc..2002@gmail.com](mailto:abc..2002@gmail.com)
+* [abc.@gmail.com](mailto:abc.@gmail.com)
+* abc@[abc@gmail.com](mailto:abc@gmail.com)
+* [abc@gmail.com.1a](mailto:abc@gmail.com.1a)
+* [abc@gmail.com.aa.au](mailto:abc@gmail.com.aa.au)
 
-### Invalid Passwords
+## Implementation
 
-```
-password@1      // No uppercase letter
-Password@       // No digit
-Pass1           // Less than 8 characters
-Password@@1     // More than one special character
-PASSWORD1       // No special character
-```
+* Created a separate test class to validate all email samples.
+* Reused the `validateEmail()` method developed earlier.
+* Displayed the validation result (`true` or `false`) for each email sample.
+
+## Expected Result
+
+* All valid email samples should be accepted.
+* All invalid email samples should be rejected.
+
+## Technologies Used
+
+* Java
+* Regular Expressions (Regex)
+* Eclipse IDE
 
 ## Outcome
 
-The program successfully validates passwords based on all four password rules:
-- Minimum 8 characters
-- At least one uppercase letter
-- At least one numeric digit
-- Exactly one special character
+Successfully verified the email validation logic by testing multiple valid and invalid email samples.

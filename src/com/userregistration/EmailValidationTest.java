@@ -1,12 +1,13 @@
 package com.userregistration;
 
-public class UserRegistrationTest {
+public class EmailValidationTest {
 
     public static void main(String[] args) {
 
-        UserRegistration ur = new UserRegistration();
+        UserRegistration user = new UserRegistration();
 
-        String[] validEmails = {
+        String[] emails = {
+                // Valid Emails
                 "abc@yahoo.com",
                 "abc-100@yahoo.com",
                 "abc.100@yahoo.com",
@@ -15,10 +16,9 @@ public class UserRegistrationTest {
                 "abc.100@abc.com.au",
                 "abc@1.com",
                 "abc@gmail.com.com",
-                "abc+100@gmail.com"
-        };
+                "abc+100@gmail.com",
 
-        String[] invalidEmails = {
+                // Invalid Emails
                 "abc",
                 "abc@.com.my",
                 "abc123@gmail.a",
@@ -34,16 +34,8 @@ public class UserRegistrationTest {
                 "abc@gmail.com.aa.au"
         };
 
-        System.out.println("Valid Emails");
-
-        for (String email : validEmails) {
-            System.out.println(email + " : " + ur.validateEmail(email));
-        }
-
-        System.out.println("\nInvalid Emails");
-
-        for (String email : invalidEmails) {
-            System.out.println(email + " : " + ur.validateEmail(email));
+        for (String email : emails) {
+            System.out.println(email + " -> " + user.validateEmail(email));
         }
     }
 }
