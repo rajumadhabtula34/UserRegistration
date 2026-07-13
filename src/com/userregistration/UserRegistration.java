@@ -34,4 +34,8 @@ public class UserRegistration {
 		   String regex="^(?=.*[A-Z])(?=.*\\d).{8,}$";
 		   return Pattern.matches(regex, password);
 	}
+	public boolean validatePasswordRule4(String password) {
+		   String regex="^(?=.*[A-Z])(?=.*\\d).{8,}(?.*[!@#$&*])$";
+		   return Pattern.matches(regex, password);
+	}
 }
