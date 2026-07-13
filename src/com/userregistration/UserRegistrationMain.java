@@ -71,7 +71,8 @@ public class UserRegistrationMain {
             		     System.out.println("password is invalid..");
             	   }
             	   System.out.println("enter the  password");
-            	   if(user.validatePasswordRule4(password3)) {
+            	   String password4=sc.nextLine();
+            	   if(user.validatePasswordRule4(password4)) {
             		       System.out.println("password is valid..");
             	   }
             	   else {

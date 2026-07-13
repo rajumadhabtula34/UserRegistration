@@ -1,52 +1,47 @@
-# User Registration System - UC7
+# UC8 - Password Validation (Rule 4)
 
-## Problem Statement
-As a user, I need to enter a valid password.
+## Objective
+Validate the user password by ensuring it satisfies all the previous password rules and contains exactly one special character.
 
-## Requirement
-The password should:
-- Contain at least 8 characters.
+## Requirements
+The password must:
+
+- Have a minimum of 8 characters.
 - Contain at least one uppercase letter.
 - Contain at least one numeric digit.
-
-## Valid Examples
-- Password1
-- Java1234
-- Welcome9
-
-## Invalid Examples
-- password1
-- Password
-- Pass12
+- Contain exactly one special character.
 
 ## Regex Used
 
 ```java
-^(?=.*[A-Z])(?=.*\\d).{8,}$
+^(?=.*[A-Z])(?=.*[0-9])(?=(?:.*[^A-Za-z0-9]){1})(?!.*[^A-Za-z0-9].*[^A-Za-z0-9]).{8,}$
 ```
 
-## Technologies Used
-- Java
-- Regular Expressions (Regex)
-- Eclipse IDE
-- Git & GitHub
+## Examples
 
-## Project Structure
+### Valid Passwords
 
 ```
-UserRegistrationSystem/
-└── src/
-    └── com.userregistration/
-        ├── UserRegistration.java
-        └── UserRegistrationMain.java
+Password@1
+Abcdef1#
+Java123$
+MyPass1!
 ```
 
-## How to Run
-1. Clone the repository.
-2. Open the project in Eclipse.
-3. Run `UserRegistrationMain.java`.
-4. Enter a password.
-5. The application validates the password based on all three rules.
+### Invalid Passwords
 
-## Author
-Raju
+```
+password@1      // No uppercase letter
+Password@       // No digit
+Pass1           // Less than 8 characters
+Password@@1     // More than one special character
+PASSWORD1       // No special character
+```
+
+## Outcome
+
+The program successfully validates passwords based on all four password rules:
+- Minimum 8 characters
+- At least one uppercase letter
+- At least one numeric digit
+- Exactly one special character
