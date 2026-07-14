@@ -1,21 +1,16 @@
-# UC10 – JUnit Happy and Sad Test Cases
+# UC11 – JUnit Parameterized Test for Email Validation
 
 ## Overview
 
-This use case introduces automated testing using the **JUnit 5** framework. The application validates user registration fields by writing unit tests for both valid (Happy) and invalid (Sad) inputs.
-
-The objective is to ensure that all validation methods work correctly and produce the expected results.
+This use case enhances the User Registration System by implementing **JUnit Parameterized Tests** to validate multiple email addresses. Instead of writing separate test methods for each email, a single parameterized test executes multiple times using different input values and expected results.
 
 ## Features
 
-- Validate First Name
-- Validate Last Name
-- Validate Email Address
-- Validate Mobile Number
-- Validate Password
-- Write Happy Test Cases (Valid Inputs)
-- Write Sad Test Cases (Invalid Inputs)
-- Use JUnit Assertions to verify expected results
+- Validate multiple email addresses using a single test method.
+- Test both valid and invalid email formats.
+- Reduce duplicate test code.
+- Improve test readability and maintainability.
+- Use JUnit 5 Parameterized Testing.
 
 ## Technologies Used
 
@@ -26,34 +21,42 @@ The objective is to ensure that all validation methods work correctly and produc
 
 ## JUnit Concepts Used
 
-- `@Test` Annotation
-- `assertTrue()`
-- `assertFalse()`
-- Unit Testing
-- Happy Test Cases
-- Sad Test Cases
+- `@ParameterizedTest`
+- `@CsvSource`
+- `assertEquals()`
+- Parameterized Testing
 
-## Test Cases Implemented
+## Implementation
 
-### First Name Validation
-- Valid First Name → Pass
-- Invalid First Name → Fail
+- `@ParameterizedTest` executes the same test method multiple times.
+- `@CsvSource` supplies different email addresses along with their expected results.
+- `assertEquals()` compares the expected result with the actual validation result returned by the application.
 
-### Last Name Validation
-- Valid Last Name → Pass
-- Invalid Last Name → Fail
+## Sample Test Data
 
-### Email Validation
-- Valid Email → Pass
-- Invalid Email → Fail
-
-### Mobile Number Validation
-- Valid Mobile Number → Pass
-- Invalid Mobile Number → Fail
-
-### Password Validation
-- Valid Password → Pass
-- Invalid Password → Fail
+| Email Address | Expected Result |
+|---------------|-----------------|
+| abc@yahoo.com | true |
+| abc-100@yahoo.com | true |
+| abc.100@yahoo.com | true |
+| abc111@abc.com | true |
+| abc-100@abc.net | true |
+| abc.100@abc.com.au | true |
+| abc@1.com | true |
+| abc@gmail.com.com | true |
+| abc+100@gmail.com | true |
+| abc | false |
+| abc@.com | false |
+| abc123@gmail.a | false |
+| abc123@.com.com | false |
+| .abc@abc.com | false |
+| abc()*@gmail.com | false |
+| abc@%*.com | false |
+| abc..2002@gmail.com | false |
+| abc.@gmail.com | false |
+| abc@abc@gmail.com | false |
+| abc@gmail.com.1a | false |
+| abc@gmail.com.aa.au | false |
 
 ## Project Structure
 
@@ -62,19 +65,27 @@ src
 │
 ├── UserRegistration.java
 ├── UserRegistrationMain.java
-└── UserRegistrationTest.java
+├── UserRegistrationTest.java
+└── EmailValidationParameterizedTest.java
 ```
 
 ## Expected Result
 
-When the JUnit tests are executed:
+- The parameterized test executes once for every email entry provided in `@CsvSource`.
+- Valid email addresses pass the validation.
+- Invalid email addresses fail the validation.
+- JUnit displays the total number of test executions along with pass/fail status.
+- A Green Bar indicates all tests passed successfully.
+- A Red Bar indicates one or more test failures.
 
-- All valid inputs pass successfully.
-- Invalid inputs fail validation.
-- JUnit displays the execution report with the number of tests run, passed, and failed.
-- A Green Bar indicates all tests passed.
-- A Red Bar indicates one or more tests failed.
+## Advantages of Parameterized Testing
+
+- Eliminates duplicate test methods.
+- Improves code readability.
+- Easier to maintain.
+- Increases test coverage.
+- Executes multiple test cases with a single test method.
 
 ## Outcome
 
-Successfully implemented automated unit testing using JUnit 5 for all user registration validations. Happy and Sad test cases ensure that the application correctly accepts valid user details and rejects invalid inputs, improving code reliability and reducing manual testing effort.
+Successfully implemented JUnit Parameterized Testing to validate multiple email addresses using `@ParameterizedTest` and `@CsvSource`. The application efficiently verifies both valid and invalid email formats while reducing code duplication and improving test maintainability.
