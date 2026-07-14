@@ -35,7 +35,7 @@ public class EmailValidationParameterizedTest {
         "abc@gmail.com.1a,false",
         "abc@gmail.com.aa.au,false"
     })
-    void givenEmail_WhenValidated_ShouldReturnExpectedResult(String email, boolean expected) {
+    void givenEmail_WhenValidated_ShouldReturnExpectedResult(String email, boolean expected) throws UserRegistrationException {
 
         assertEquals(expected, user.validateEmail(email));
     }

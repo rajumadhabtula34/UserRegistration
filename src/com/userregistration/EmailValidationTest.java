@@ -2,7 +2,7 @@ package com.userregistration;
 
 public class EmailValidationTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationException {
 
         UserRegistration user = new UserRegistration();
 

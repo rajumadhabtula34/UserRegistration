@@ -1,62 +1,46 @@
-# UC11 – JUnit Parameterized Test for Email Validation
+# UC12 – Refactor Code to Throw Custom Exceptions
 
 ## Overview
 
-This use case enhances the User Registration System by implementing **JUnit Parameterized Tests** to validate multiple email addresses. Instead of writing separate test methods for each email, a single parameterized test executes multiple times using different input values and expected results.
+This use case enhances the User Registration System by implementing **Custom Exception Handling**. Instead of returning `false` for invalid user details, the application throws a custom exception with an appropriate error message. JUnit test cases are also updated to verify the thrown exceptions using `assertThrows()`.
 
 ## Features
 
-- Validate multiple email addresses using a single test method.
-- Test both valid and invalid email formats.
-- Reduce duplicate test code.
-- Improve test readability and maintainability.
-- Use JUnit 5 Parameterized Testing.
+- Create a custom exception class.
+- Throw custom exceptions for invalid user details.
+- Validate:
+  - First Name
+  - Last Name
+  - Email Address
+  - Mobile Number
+  - Password Rules
+- Rewrite JUnit test cases using `assertThrows()`.
+- Verify exception messages using `assertEquals()`.
 
 ## Technologies Used
 
 - Java
 - JUnit 5
+- Exception Handling
+- Regular Expressions (Regex)
 - Eclipse IDE
 - Git & GitHub
 
 ## JUnit Concepts Used
 
-- `@ParameterizedTest`
-- `@CsvSource`
+- `@Test`
+- `assertTrue()`
+- `assertThrows()`
 - `assertEquals()`
-- Parameterized Testing
+- Custom Exception Handling
 
 ## Implementation
 
-- `@ParameterizedTest` executes the same test method multiple times.
-- `@CsvSource` supplies different email addresses along with their expected results.
-- `assertEquals()` compares the expected result with the actual validation result returned by the application.
-
-## Sample Test Data
-
-| Email Address | Expected Result |
-|---------------|-----------------|
-| abc@yahoo.com | true |
-| abc-100@yahoo.com | true |
-| abc.100@yahoo.com | true |
-| abc111@abc.com | true |
-| abc-100@abc.net | true |
-| abc.100@abc.com.au | true |
-| abc@1.com | true |
-| abc@gmail.com.com | true |
-| abc+100@gmail.com | true |
-| abc | false |
-| abc@.com | false |
-| abc123@gmail.a | false |
-| abc123@.com.com | false |
-| .abc@abc.com | false |
-| abc()*@gmail.com | false |
-| abc@%*.com | false |
-| abc..2002@gmail.com | false |
-| abc.@gmail.com | false |
-| abc@abc@gmail.com | false |
-| abc@gmail.com.1a | false |
-| abc@gmail.com.aa.au | false |
+- Created a custom exception class named `UserRegistrationException`.
+- Modified all validation methods to throw `UserRegistrationException` whenever the input validation fails.
+- Valid inputs return `true`.
+- Invalid inputs throw a custom exception with an appropriate error message.
+- JUnit test cases verify both successful validations and expected exceptions.
 
 ## Project Structure
 
@@ -64,28 +48,43 @@ This use case enhances the User Registration System by implementing **JUnit Para
 src
 │
 ├── UserRegistration.java
+├── UserRegistrationException.java
 ├── UserRegistrationMain.java
 ├── UserRegistrationTest.java
 └── EmailValidationParameterizedTest.java
 ```
 
+## Validation Rules
+
+### First Name
+- Starts with a capital letter.
+- Minimum 3 characters.
+
+### Last Name
+- Starts with a capital letter.
+- Minimum 3 characters.
+
+### Email
+- Must follow a valid email format.
+
+### Mobile Number
+- Country code followed by a space and a 10-digit mobile number.
+
+### Password
+- Minimum 8 characters.
+- At least one uppercase letter.
+- At least one numeric digit.
+- Exactly one special character.
+
 ## Expected Result
 
-- The parameterized test executes once for every email entry provided in `@CsvSource`.
-- Valid email addresses pass the validation.
-- Invalid email addresses fail the validation.
-- JUnit displays the total number of test executions along with pass/fail status.
-- A Green Bar indicates all tests passed successfully.
-- A Red Bar indicates one or more test failures.
-
-## Advantages of Parameterized Testing
-
-- Eliminates duplicate test methods.
-- Improves code readability.
-- Easier to maintain.
-- Increases test coverage.
-- Executes multiple test cases with a single test method.
+- Valid user details pass all validation checks.
+- Invalid user details throw `UserRegistrationException`.
+- JUnit verifies that the correct exception is thrown.
+- JUnit also verifies the exception message using `assertEquals()`.
+- A Green Bar indicates all test cases passed successfully.
+- A Red Bar indicates one or more failed test cases.
 
 ## Outcome
 
-Successfully implemented JUnit Parameterized Testing to validate multiple email addresses using `@ParameterizedTest` and `@CsvSource`. The application efficiently verifies both valid and invalid email formats while reducing code duplication and improving test maintainability.
+Successfully refactored the User Registration System to use custom exception handling for invalid user details. Updated JUnit test cases validate both successful inputs and exception scenarios, making the application more robust, maintainable, and easier to debug.
