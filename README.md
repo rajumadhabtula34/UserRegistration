@@ -1,58 +1,80 @@
-# Email Validation - Test All Email Samples
+# UC10 – JUnit Happy and Sad Test Cases
 
-## Objective
+## Overview
 
-Validate all the email samples provided in the test case document using Java Regular Expressions (Regex). The program should correctly identify valid and invalid email addresses.
+This use case introduces automated testing using the **JUnit 5** framework. The application validates user registration fields by writing unit tests for both valid (Happy) and invalid (Sad) inputs.
 
-## Description
+The objective is to ensure that all validation methods work correctly and produce the expected results.
 
-This program reuses the email validation method developed earlier and tests it against a predefined list of valid and invalid email samples.
+## Features
 
-## Valid Email Samples
-
-* [abc@yahoo.com](mailto:abc@yahoo.com)
-* [abc-100@yahoo.com](mailto:abc-100@yahoo.com)
-* [abc.100@yahoo.com](mailto:abc.100@yahoo.com)
-* [abc111@abc.com](mailto:abc111@abc.com)
-* [abc-100@abc.net](mailto:abc-100@abc.net)
-* [abc.100@abc.com.au](mailto:abc.100@abc.com.au)
-* [abc@1.com](mailto:abc@1.com)
-* [abc@gmail.com.com](mailto:abc@gmail.com.com)
-* [abc+100@gmail.com](mailto:abc+100@gmail.com)
-
-## Invalid Email Samples
-
-* abc
-* [abc@.com.my](mailto:abc@.com.my)
-* [abc123@gmail.a](mailto:abc123@gmail.a)
-* [abc123@.com](mailto:abc123@.com)
-* [abc123@.com.com](mailto:abc123@.com.com)
-* [.abc@abc.com](mailto:.abc@abc.com)
-* abc()*@gmail.com
-* abc@%*.com
-* [abc..2002@gmail.com](mailto:abc..2002@gmail.com)
-* [abc.@gmail.com](mailto:abc.@gmail.com)
-* abc@[abc@gmail.com](mailto:abc@gmail.com)
-* [abc@gmail.com.1a](mailto:abc@gmail.com.1a)
-* [abc@gmail.com.aa.au](mailto:abc@gmail.com.aa.au)
-
-## Implementation
-
-* Created a separate test class to validate all email samples.
-* Reused the `validateEmail()` method developed earlier.
-* Displayed the validation result (`true` or `false`) for each email sample.
-
-## Expected Result
-
-* All valid email samples should be accepted.
-* All invalid email samples should be rejected.
+- Validate First Name
+- Validate Last Name
+- Validate Email Address
+- Validate Mobile Number
+- Validate Password
+- Write Happy Test Cases (Valid Inputs)
+- Write Sad Test Cases (Invalid Inputs)
+- Use JUnit Assertions to verify expected results
 
 ## Technologies Used
 
-* Java
-* Regular Expressions (Regex)
-* Eclipse IDE
+- Java
+- JUnit 5
+- Eclipse IDE
+- Git & GitHub
+
+## JUnit Concepts Used
+
+- `@Test` Annotation
+- `assertTrue()`
+- `assertFalse()`
+- Unit Testing
+- Happy Test Cases
+- Sad Test Cases
+
+## Test Cases Implemented
+
+### First Name Validation
+- Valid First Name → Pass
+- Invalid First Name → Fail
+
+### Last Name Validation
+- Valid Last Name → Pass
+- Invalid Last Name → Fail
+
+### Email Validation
+- Valid Email → Pass
+- Invalid Email → Fail
+
+### Mobile Number Validation
+- Valid Mobile Number → Pass
+- Invalid Mobile Number → Fail
+
+### Password Validation
+- Valid Password → Pass
+- Invalid Password → Fail
+
+## Project Structure
+
+```
+src
+│
+├── UserRegistration.java
+├── UserRegistrationMain.java
+└── UserRegistrationTest.java
+```
+
+## Expected Result
+
+When the JUnit tests are executed:
+
+- All valid inputs pass successfully.
+- Invalid inputs fail validation.
+- JUnit displays the execution report with the number of tests run, passed, and failed.
+- A Green Bar indicates all tests passed.
+- A Red Bar indicates one or more tests failed.
 
 ## Outcome
 
-Successfully verified the email validation logic by testing multiple valid and invalid email samples.
+Successfully implemented automated unit testing using JUnit 5 for all user registration validations. Happy and Sad test cases ensure that the application correctly accepts valid user details and rejects invalid inputs, improving code reliability and reducing manual testing effort.

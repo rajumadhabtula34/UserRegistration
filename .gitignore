@@ -1,39 +1,72 @@
-# Eclipse
-.metadata/
-bin/
-
-# Java compiled files
+# ===========================
+# Java
+# ===========================
 *.class
-
-# Logs
 *.log
+*.ctxt
 
-# Temporary files
-*.tmp
-*.temp
+# ===========================
+# Eclipse
+# ===========================
+.metadata/
+.settings/
+.project
+.classpath
+.recommenders/
 
-# OS files
-.DS_Store
-Thumbs.db
+# ===========================
+# Build Folders
+# ===========================
+bin/
+target/
+build/
+out/
 
+# ===========================
+# Maven
+# ===========================
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+
+# ===========================
+# Gradle
+# ===========================
+.gradle/
+
+# ===========================
 # IntelliJ IDEA
+# ===========================
 .idea/
 *.iml
 
+# ===========================
 # VS Code
+# ===========================
 .vscode/
 
-# Maven
-target/
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# Gradle
-build/
-.gradle/
-# Eclipse
-.classpath
-.project
-.settings/
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.bak
+*.swp
+*.swo
 
-# Compiled files
-bin/
-*.class
+# ===========================
+# JUnit Reports
+# ===========================
+TEST-*.xml
+surefire-reports/
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
